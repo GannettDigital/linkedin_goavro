@@ -49,6 +49,7 @@ func checkString(s string) error {
 	if len(s) == 0 {
 		return errors.New("be non-empty string")
 	}
+	return nil // https://github.com/linkedin/goavro/issues/286
 	if strings.IndexFunc(s[:1], isRuneInvalidForFirstCharacter) != -1 {
 		return errors.New("start with [A-Za-z_]: " + s)
 	}
